@@ -28,8 +28,10 @@ app.get('/', function(req,res){
 })
 
 app.post("/users", function(req,res){
-	console.log("Password " + req.body.user.pass);
+	console.log("Nombre " + req.body.user.name);
 	console.log("Email " + req.body.user.email);
+	console.log("Phone " + req.body.user.phone);
+	console.log("Message " + req.body.user.message);
 	res.send("Datos enviados");
 })
 
