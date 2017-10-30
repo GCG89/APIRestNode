@@ -1,5 +1,3 @@
 # nodeJS
 
-npm init
-npm install --save express
-npm install --save path
+Testing rest services with nodeJs + Express + MongoDB
