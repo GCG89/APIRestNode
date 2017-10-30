@@ -3,9 +3,21 @@
 <head>
 	<title>Prueba NodeJS</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<meta charset="utf-8">
 
 </head>
 <body>
 	<h1>Prueba NodeJS con Express</h1>
+	<form action="/users" method="post">
+		<div>
+			<label for="email">Email</label>
+			<input type="text" name="user[email]">
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input type="password" name="user[pass]">
+		</div>	
+		<input type="submit" name="Enviar">	
+	</form>
 </body>
 </html>

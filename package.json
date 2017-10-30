@@ -1,16 +1,26 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm init\r npm install --save express\r npm install --save path",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "gcg",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "path": "^0.12.7",
     "static": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GCG89/nodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GCG89/nodeJS/issues"
+  },
+  "homepage": "https://github.com/GCG89/nodeJS#readme"
 }
