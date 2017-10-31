@@ -6,7 +6,7 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const app = express();
-const UserCtrl = require('./controller/users')
+const UserCtrl = require('./controllers/users')
 const path_module = require('path');
 const path = __dirname;
 

@@ -4,7 +4,7 @@
 **/
 'use strict'
 
-const Users = require('./models/users')
+const Users = require('../models/users')
 
 function getUser (req, res){
 	let userId = req.params.userId
