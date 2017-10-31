@@ -1,40 +1,19 @@
-//Constantes
-const express = require('express');
-const path_module = require('path');
-const bodyParser = require("body-parser");
-const app = express();
-const path = __dirname;
+/** Logica del servidor
+*	llama al modulo de App y configura una conexión a MongoDB a partir 
+*   de Mongoose
+**/
+const mongoose = require('mongoose');
+const app = require('./app')
 
-/**
-* Configuración de la carpeta public y el bodyParser para recuperar 
-* elementos del form
-*/
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({
-	extended:true
-}));
-app.use(bodyParser.json());
-
-app.get('/json', function(req,res){
-	res.json({'pruebaJson': 'yes'});
+mongoose.Promise = require('bluebird')
+mongoose.connect('mongodb://localhost/api', {useMongoClient: true}, function(err, res){
+	if(err){
+		console.log("Error al conectar a la BBDD")
+	}else{
+		console.log("Conectado a la BBDD");
+		app.listen(8080, function(req,res){
+		console.log("Listening port 8080...");
+	});
+	}
 })
 
-/*
-* Enrutamiento del main y del users para recuperar los datos 
-* desde el formulario
-*/
-app.get('/', function(req,res){
-	res.sendFile(path + '/views/index.html');
-})
-
-app.post("/users", function(req,res){
-	console.log("Nombre " + req.body.user.name);
-	console.log("Email " + req.body.user.email);
-	console.log("Phone " + req.body.user.phone);
-	console.log("Message " + req.body.user.message);
-	res.send("Datos enviados");
-})
-
-app.listen(8080, function(req,res){
-	console.log("Listening port 8080...");
-});

@@ -10,8 +10,10 @@
   "author": "gcg",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mongoose": "^4.12.5",
     "path": "^0.12.7",
     "static": "^2.0.0"
   },
